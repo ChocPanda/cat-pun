@@ -1,4 +1,4 @@
-# @Cat-Pun/Admin UI
+# @Cat-Pun/Candidate UI
 
 ## Project setup
 ```

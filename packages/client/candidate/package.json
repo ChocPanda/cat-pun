@@ -1,7 +1,7 @@
 {
-  "name": "@cat-pun-ui/admin",
+  "name": "@cat-pun-ui/candidate",
   "version": "0.0.1",
-  "description": "Admin UI for Cat-Pun",
+  "description": "Candidate UI for Cat-Pun",
   "private": true,
   "repository": "https://github.com/chocpanda/cat-pun",
   "author": "ChocPanda",
