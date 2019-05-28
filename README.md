@@ -12,9 +12,6 @@
   <a href="https://david-dm.org/ChocPanda/cat-pun" alt="dependencies">
     <img src="https://david-dm.org/ChocPanda/cat-pun.svg"/>
   </a>
-  <a href="https://www.npmjs.com/package/cat-pun" alt="npm">
-    <img alt="npm" src="https://img.shields.io/npm/v/cat-pun.svg?label=npm%40latest&style=popout">
-  </a>
   <a href="https://github.com/ChocPanda/cat-pun/blob/master/LICENSE" alt="license">
     <img src="https://img.shields.io/github/license/ChocPanda/cat-pun.svg?style=popout"/>
   </a>
