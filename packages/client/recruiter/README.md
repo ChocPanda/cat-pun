@@ -1,4 +1,4 @@
-# @Cat-Pun/Admin UI
+# @Cat-Pun/Recruiter UI
 
 ## Project setup
 ```
