@@ -1,0 +1,54 @@
+{
+  "name": "@cat-pun-ui/admin",
+  "version": "0.0.1",
+  "description": "Admin UI for Cat-Pun",
+  "private": true,
+  "repository": "https://github.com/chocpanda/cat-pun",
+  "author": "ChocPanda",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "xo",
+    "lint:test": "xo",
+    "lint:fix": "xo --fix",
+    "lint:report": "xo --reporter junit > ./reports/xo/test-results.xml"
+  },
+  "dependencies": {
+    "buefy": "^0.7.6",
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "vue-template-compiler": "^2.6.10",
+    "xo": "^0.24.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "xo": {
+    "prettier": "true",
+    "overrides": [
+      {
+        "files": [
+          "**/*"
+        ],
+        "parserOptions": {
+          "parser": "babel-eslint",
+          "ecmaVersion": 2018,
+          "sourceType": "module"
+        }
+      }
+    ]
+  }
+}
