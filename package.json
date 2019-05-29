@@ -8,12 +8,16 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/client/*",
+    "packages/server/*"
   ],
   "scripts": {
     "commit": "git-cz",
     "bootstrap": "lerna bootstrap",
-    "release": "semantic-release"
+    "lint": "lerna run lint --stream",
+    "lint:test": "lerna run lint:test --stream",
+    "lint:fix": "lerna run lint:fix --stream",
+    "lint:report": "lerna run lint:report --stream"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
