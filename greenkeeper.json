@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/client/admin/package.json",
+        "packages/client/candidate/package.json",
+        "packages/client/recruiter/package.json"
+      ]
+    }
+  }
+}
