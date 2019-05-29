@@ -1,7 +1,5 @@
 # CAT-PUN (needed) #
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ChocPanda/cat-pun.svg?token=e80848e7a5d8df6f4f30e8d0f5c2edd89a1b16fed138ef52c45df7a94040775f&ts=1559050477570)](https://greenkeeper.io/)
-
 ## Work in progress ##
 
 <p align="center">
@@ -31,6 +29,9 @@
 	</a>
 	<a href="https://lerna.js.org/" alt="Lerna">
 		<img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg"/>
+	</a>
+	<a href="https://greenkeeper.io/" alt="Greenkeeper badge">
+		<img src="https://badges.greenkeeper.io/ChocPanda/cat-pun.svg" />
 	</a>
 </p>
 
