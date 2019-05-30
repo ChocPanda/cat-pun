@@ -29,7 +29,11 @@
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "ava": "^1.4.1",
+    "browser-env": "^3.2.6",
     "nyc": "^14.1.1",
+    "require-extension-hooks": "^0.3.3",
+    "require-extension-hooks-babel": "^1.0.0-beta.1",
+    "require-extension-hooks-vue": "^3.0.0",
     "tap-junit": "^3.1.0",
     "vue-template-compiler": "^2.6.10"
   },
