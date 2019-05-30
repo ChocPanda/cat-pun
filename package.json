@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/**/*"
   ],
   "scripts": {
     "commit": "git-cz",
@@ -35,5 +35,24 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "xo": {
+    "prettier": "true",
+    "ignores": [
+      "reports/**/*",
+      ".nyc_output/**/*"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*"
+        ],
+        "parserOptions": {
+          "parser": "babel-eslint",
+          "ecmaVersion": 2018,
+          "sourceType": "module"
+        }
+      }
+    ]
   }
 }
