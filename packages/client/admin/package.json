@@ -12,7 +12,11 @@
     "lint": "eslint .",
     "lint:test": "eslint .",
     "lint:fix": "eslint --fix .",
-    "lint:report": "eslint --format junit . > ./reports/eslint/test-results.xml"
+    "lint:report": "eslint --format junit . > ./reports/eslint/test-results.xml",
+    "test": "nyc ava",
+    "test:unit": "nyc ava",
+    "test:cov": "nyc ava && nyc report",
+    "test:report": "nyc ava --tap | tap-junit --output ./reports/ava --name test-results.xml"
   },
   "dependencies": {
     "buefy": "^0.7.7",
