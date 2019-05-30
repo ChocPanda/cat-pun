@@ -13,7 +13,15 @@
   "scripts": {
     "commit": "git-cz",
     "bootstrap": "lerna bootstrap",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "lint": "lerna run lint --stream",
+    "lint:test": "lerna run lint:test --stream",
+    "lint:fix": "lerna run lint:fix --stream",
+    "lint:report": "lerna run lint:report --stream",
+    "test": "lerna run test --stream",
+    "test:unit": "lerna run test:unit --stream",
+    "test:cov": "lerna run test:cov --stream",
+    "test:report": "lerna run test:report --stream"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
@@ -21,13 +29,7 @@
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "2.1.0",
     "lerna": "^3.14.1",
-    "nyc": "^14.0.0",
-    "semantic-release": "^15.13.3",
-    "tap-junit": "^3.1.0",
-    "xo": "^0.24.0"
-  },
-  "xo": {
-    "prettier": "true"
+    "semantic-release": "^15.13.3"
   },
   "config": {
     "commitizen": {
