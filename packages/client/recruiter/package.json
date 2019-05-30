@@ -15,7 +15,7 @@
     "lint:report": "xo --reporter junit > ./reports/xo/test-results.xml"
   },
   "dependencies": {
-    "buefy": "^0.7.6",
+    "buefy": "^0.7.7",
     "core-js": "^3.1.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
