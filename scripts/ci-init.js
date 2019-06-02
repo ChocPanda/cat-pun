@@ -4,13 +4,13 @@ const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
 
-const createReportDir = root =>
-	fs.readdirSync(root).forEach(projectDir => {
-		mkdirp(path.resolve(root, projectDir, 'reports', 'xo'));
-		mkdirp(path.resolve(root, projectDir, 'reports', 'ava'));
+const createReportDirectory = root =>
+	fs.readdirSync(root).forEach(projectDirectory => {
+		mkdirp(path.resolve(root, projectDirectory, 'reports', 'eslint'));
+		mkdirp(path.resolve(root, projectDirectory, 'reports', 'ava'));
 	});
 
-createReportDir('..');
-createReportDir('packages/client');
+createReportDirectory('..');
+createReportDirectory('packages/client');
 // CreateReportDir('packages/server')
 // createReportDir('packages/libs')

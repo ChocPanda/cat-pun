@@ -15,10 +15,10 @@
     "bootstrap": "lerna bootstrap",
     "release": "semantic-release",
     "ci:init": "node scripts/ci-init",
-    "lint": "lerna run lint --stream && xo scripts/*",
-    "lint:test": "lerna run lint:test --stream && xo scripts/*",
-    "lint:fix": "lerna run lint:fix --stream && xo --fix scripts/*",
-    "lint:report": "lerna run lint:report --stream && node scripts/merge-reports --reporter xo",
+    "lint": "lerna run lint --stream && eslint scripts/*",
+    "lint:test": "lerna run lint:test --stream && eslint scripts/*",
+    "lint:fix": "lerna run lint:fix --stream && eslint --fix scripts/*",
+    "lint:report": "lerna run lint:report --stream && node scripts/merge-reports --format eslint",
     "test": "lerna run test --stream",
     "test:unit": "lerna run test:unit --stream",
     "test:cov": "lerna run test:cov --stream",
@@ -30,11 +30,18 @@
     "babel-eslint": "^10.0.1",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "2.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
     "eslint-config-vue": "^2.0.2",
+    "eslint-config-eslint": "^0.26.0",
+    "eslint-plugin-ava": "^7.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-unicorn": "^9.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "junit-report-merger": "^0.0.6",
     "lerna": "^3.14.1",
     "mkdirp": "^0.5.1",
+    "prettier": "^1.17.1",
     "semantic-release": "^15.13.3",
     "yargs": "^13.2.4"
   },
@@ -42,19 +49,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "xo": {
-    "prettier": "true",
-    "extends": [
-      "plugin:vue/recommended"
-    ],
-    "extensions": [
-      ".js",
-      ".vue"
-		],
-    "ignores": [
-      "reports/**/*",
-      ".nyc_output/**/*"
-    ]
   }
 }
