@@ -14,10 +14,11 @@
     "commit": "git-cz",
     "bootstrap": "lerna bootstrap",
     "release": "semantic-release",
-    "lint": "lerna run lint --stream",
-    "lint:test": "lerna run lint:test --stream",
-    "lint:fix": "lerna run lint:fix --stream",
-    "lint:report": "lerna run lint:report --stream",
+    "ci:init": "node scripts/ci-init",
+    "lint": "lerna run lint --stream && xo scripts/*",
+    "lint:test": "lerna run lint:test --stream && xo scripts/*",
+    "lint:fix": "lerna run lint:fix --stream && xo --fix scripts/*",
+    "lint:report": "lerna run lint:report --stream && node scripts/merge-reports --reporter xo",
     "test": "lerna run test --stream",
     "test:unit": "lerna run test:unit --stream",
     "test:cov": "lerna run test:cov --stream",
@@ -26,10 +27,16 @@
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
+    "babel-eslint": "^10.0.1",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "2.1.0",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-vue": "^5.2.2",
+    "junit-report-merger": "^0.0.6",
     "lerna": "^3.14.1",
-    "semantic-release": "^15.13.3"
+    "mkdirp": "^0.5.1",
+    "semantic-release": "^15.13.3",
+    "yargs": "^13.2.4"
   },
   "config": {
     "commitizen": {
@@ -38,21 +45,16 @@
   },
   "xo": {
     "prettier": "true",
+    "extends": [
+      "plugin:vue/recommended"
+    ],
+    "extensions": [
+      ".js",
+      ".vue"
+		],
     "ignores": [
       "reports/**/*",
       ".nyc_output/**/*"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*"
-        ],
-        "parserOptions": {
-          "parser": "babel-eslint",
-          "ecmaVersion": 2018,
-          "sourceType": "module"
-        }
-      }
     ]
   }
 }

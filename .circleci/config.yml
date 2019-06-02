@@ -28,13 +28,6 @@ jobs:
             key: yarn-packages-{{ checksum "yarn.lock" }}
             paths:
                 - ~/.cache/yarn
-        - run:
-            name: Create Reports Directory
-            command: |
-                ls ./packages/client | xargs -I $0 mkdir -p ./packages/client/$0reports/xo
-                ls ./packages/client | xargs -I $0 mkdir -p ./packages/client/$0reports/ava
-                # ls ./packages/server | xargs -I $0 mkdir -p ./packages/server/$0reports/xo
-                # ls ./packages/server | xargs -I $0 mkdir -p ./packages/server/$0reports/ava
         - persist_to_workspace:
             root: .
             paths:
@@ -45,6 +38,9 @@ jobs:
         steps:
             - attach_workspace:
                 at: .
+            - run:
+                name: Create Reports Directory
+                command: yarn run ci:init
             - run: # run unit tests
                 name: Unit Test
                 command: 'yarn run test:report'
@@ -64,8 +60,12 @@ jobs:
             - attach_workspace:
                 at: .
             - run:
+                name: Create Reports Directory
+                command: yarn run ci:init
+            - run:
                 name: Lint Test
-                command: 'yarn lint:report'
+                command: 'yarn lint:test'
+            -
             - store_artifacts:
                 path: ./reports
             - store_test_results:
@@ -104,15 +104,16 @@ workflows:
             - setup
             - lint:
                 requires: [ setup ]
-            - test:
-                requires: [ setup ]
-            - build:
-                requires: [ lint, test ]
-            - publish-github-release:
-                requires:
-                    - build
-                filters:
-                    branches:
-                        only: master
-                    tags:
-                        only: /^\d+\.\d+\.\d+$/
+            # See https://github.com/ChocPanda/cat-pun/issues/13
+            # - test:
+            #     requires: [ setup ]
+            # - build:
+            #     requires: [ lint, test ]
+            # - publish-github-release:
+            #     requires:
+            #         - build
+            #     filters:
+            #         branches:
+            #             only: master
+            #         tags:
+            #             only: /^\d+\.\d+\.\d+$/

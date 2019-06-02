@@ -8,15 +8,11 @@
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+		"build": "vue-cli-service build",
     "lint": "xo",
     "lint:test": "xo",
     "lint:fix": "xo --fix",
-    "lint:report": "xo --reporter junit > ./reports/xo/test-results.xml",
-    "test": "nyc ava",
-    "test:unit": "nyc ava",
-    "test:cov": "nyc ava && nyc report",
-    "test:report": "nyc ava --tap | tap-junit --output ./reports/ava --name test-results.xml"
+    "lint:report": "xo --reporter junit > ./reports/xo/test-results.xml"
   },
   "dependencies": {
     "buefy": "^0.7.7",
