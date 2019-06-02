@@ -33,26 +33,26 @@ jobs:
             paths:
                 - "*"
 
-    test:
-        executor: builder
-        steps:
-            - attach_workspace:
-                at: .
-            - run:
-                name: Create Reports Directory
-                command: yarn run ci:init
-            - run: # run unit tests
-                name: Unit Test
-                command: 'yarn run test:report'
-            - run: # run coverage report
-                name: Code Coverage
-                command: 'yarn run test:cov'
-            - store_artifacts:
-                path: ./reports
-            - store_test_results:
-                path: ./reports
-            - codecov/upload:
-                file: './reports/coverage/lcov.info'
+    # test:
+    #     executor: builder
+    #     steps:
+    #         - attach_workspace:
+    #             at: .
+    #         - run:
+    #             name: Create Reports Directory
+    #             command: yarn run ci:init
+    #         - run: # run unit tests
+    #             name: Unit Test
+    #             command: 'yarn run test:report'
+    #         - run: # run coverage report
+    #             name: Code Coverage
+    #             command: 'yarn run test:cov'
+    #         - store_artifacts:
+    #             path: ./reports
+    #         - store_test_results:
+    #             path: ./reports
+    #         - codecov/upload:
+    #             file: './reports/coverage/lcov.info'
 
     lint:
         executor: builder
@@ -71,32 +71,32 @@ jobs:
             - store_test_results:
                 path: ./reports
 
-    build:
-        executor: builder
-        steps:
-            - attach_workspace:
-                at: .
-            - run:
-                name: Build
-                command: 'yarn build'
-            - store_artifacts:
-                path: ./dist
-            - persist_to_workspace:
-                root: .
-                paths:
-                    - ./dist
+    # build:
+    #     executor: builder
+    #     steps:
+    #         - attach_workspace:
+    #             at: .
+    #         - run:
+    #             name: Build
+    #             command: 'yarn build'
+    #         - store_artifacts:
+    #             path: ./dist
+    #         - persist_to_workspace:
+    #             root: .
+    #             paths:
+    #                 - ./dist
 
-    publish-github-release:
-        executor: builder
-        steps:
-        - attach_workspace:
-            at: .
-        - run:
-            name: Update the README tables of contents
-            command: yarn docs-toc
-        - run:
-            name: Publish Release on GitHub
-            command: yarn release
+    # publish-github-release:
+    #     executor: builder
+    #     steps:
+    #     - attach_workspace:
+    #         at: .
+    #     - run:
+    #         name: Update the README tables of contents
+    #         command: yarn docs-toc
+    #     - run:
+    #         name: Publish Release on GitHub
+    #         command: yarn release
 
 workflows:
     main:
