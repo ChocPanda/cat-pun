@@ -33,7 +33,6 @@
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-config-vue": "^2.0.2",
-    "eslint-config-eslint": "^0.26.0",
     "eslint-plugin-ava": "^7.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-unicorn": "^9.0.0",
