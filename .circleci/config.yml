@@ -43,7 +43,23 @@ jobs:
                 command: yarn run ci:init
             - run:
                 name: Lint Test
-                command: 'yarn lint:test'
+                command: 'yarn lint:report'
+            - store_artifacts:
+                path: ./reports
+            - store_test_results:
+                path: ./reports
+
+    test:
+        executor: builder
+        steps:
+            - attach_workspace:
+                at: .
+            - run: # run unit tests
+                name: Unit Test
+                command: 'yarn run test:unit'
+            - run: # run coverage report
+                name: Code Coverage
+                command: 'yarn run test:cov'
             - store_artifacts:
                 path: ./reports
             - store_test_results:
@@ -55,9 +71,9 @@ workflows:
             - setup
             - lint:
                 requires: [ setup ]
+            - test:
+                requires: [ setup ]
             # See https://github.com/ChocPanda/cat-pun/issues/13
-            # - test:
-            #     requires: [ setup ]
             # - build:
             #     requires: [ lint, test ]
             # - publish-github-release:
