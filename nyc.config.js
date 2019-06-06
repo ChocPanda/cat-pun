@@ -1,5 +1,5 @@
 module.exports = {
-	'check-coverage': true,
+	'check-coverage': false,
 	'per-file': true,
 	lines: 75,
 	statements: 75,
