@@ -1,3 +1,4 @@
 module.exports = {
-	bracketSpacing: true
+	bracketSpacing: true,
+	printWidth: 120
 };
