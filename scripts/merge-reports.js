@@ -12,9 +12,7 @@ const { argv } = require('yargs').option('reporter', {
 const getReportDirectory = root =>
 	fs
 		.readdirSync(root)
-		.map(projectDirectory =>
-			path.resolve(root, projectDirectory, 'reports', argv.reporter, 'test-results.xml')
-		)
+		.map(projectDirectory => path.resolve(root, projectDirectory, 'reports', argv.reporter, 'test-results.xml'))
 		.filter(reportDirectory => fs.existsSync(reportDirectory));
 
 const clientReportFolders = getReportDirectory(path.resolve('packages/client'));
