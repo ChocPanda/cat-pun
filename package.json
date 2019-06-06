@@ -18,7 +18,7 @@
     "lint": "lerna run lint --stream && eslint scripts/*",
     "lint:test": "lerna run lint:test --stream && eslint scripts/*",
     "lint:fix": "lerna run lint:fix --stream && eslint --fix scripts/*",
-    "lint:report": "lerna run lint:report --stream && node scripts/merge-reports --format eslint",
+    "lint:report": "lerna run lint:report --stream && node scripts/merge-reports --reporter eslint",
     "test": "lerna run test --stream",
     "test:unit": "lerna run test:unit --stream",
     "test:cov": "lerna run test:cov --stream",
