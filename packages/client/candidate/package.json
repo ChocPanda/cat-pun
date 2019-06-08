@@ -1,47 +1,71 @@
 {
-  "name": "@cat-pun-ui/candidate",
-  "version": "0.0.1",
-  "description": "Candidate UI for Cat-Pun",
-  "private": true,
-  "repository": "https://github.com/chocpanda/cat-pun",
-  "author": "ChocPanda",
-  "license": "MIT",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "eslint .",
-    "lint:test": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "lint:report": "eslint --format junit . > ./reports/eslint/test-results.xml"
-  },
-  "dependencies": {
-    "buefy": "^0.7.7",
-    "core-js": "^3.1.3",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
-    "ava": "^1.4.1",
-    "browser-env": "^3.2.6",
-    "nyc": "^14.0.0",
-    "require-extension-hooks": "^0.3.3",
-    "require-extension-hooks-babel": "^1.0.0-beta.1",
-    "require-extension-hooks-vue": "^3.0.0",
-    "tap-junit": "^3.1.0",
-    "vue-template-compiler": "^2.6.10",
-    "xo": "^0.24.0"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
-  "xo": false
+	"name": "@cat-pun-ui/candidate",
+	"version": "0.0.1",
+	"description": "Candidate UI for Cat-Pun",
+	"private": true,
+	"repository": "https://github.com/chocpanda/cat-pun",
+	"author": "ChocPanda",
+	"license": "MIT",
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "xo .",
+		"lint:test": "xo .",
+		"lint:fix": "xo --fix .",
+		"lint:report": "xo --format junit . > ./reports/xo/test-results.xml"
+	},
+	"dependencies": {
+		"buefy": "^0.7.7",
+		"core-js": "^3.1.3",
+		"vue": "^2.6.10",
+		"vue-router": "^3.0.3",
+		"vuex": "^3.0.1"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "^3.8.0",
+		"@vue/cli-service": "^3.8.0",
+		"ava": "^1.4.1",
+		"browser-env": "^3.2.6",
+		"nyc": "^14.0.0",
+		"tap-junit": "^3.1.0",
+		"vue-template-compiler": "^2.6.10",
+		"xo": "^0.24.0"
+	},
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {}
+		}
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions"
+	],
+	"xo": {
+		"extends": "xo-vue",
+		"prettier": "true",
+		"extensions": [
+			"js",
+			"vue"
+		],
+		"rules": {
+			"unicorn/prevent-abbreviations": [
+				"error",
+				{
+					"whitelist": {
+						"props": true,
+						"assetsDir": true
+					}
+				}
+			],
+			"unicorn/filename-case": [
+				"warn",
+				{
+					"cases": {
+						"pascalCase": true,
+						"kebabCase": true
+					}
+				}
+			]
+		}
+	}
 }
