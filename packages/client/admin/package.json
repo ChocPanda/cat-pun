@@ -1,50 +1,74 @@
 {
-  "name": "@cat-pun-ui/admin",
-  "version": "0.0.1",
-  "description": "Admin UI for Cat-Pun",
-  "private": true,
-  "repository": "https://github.com/chocpanda/cat-pun",
-  "author": "ChocPanda",
-  "license": "MIT",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "xo .",
-    "lint:test": "xo .",
-    "lint:fix": "xo --fix .",
-    "lint:report": "xo --format junit . > ./reports/xo/test-results.xml",
-    "test": "nyc ava",
-    "test:unit": "nyc ava",
-    "test:cov": "nyc ava && nyc report",
-    "test:report": "nyc ava --tap | tap-junit --output ./reports/ava --name test-results.xml"
-  },
-  "dependencies": {
-    "buefy": "^0.7.7",
-    "core-js": "^3.1.3",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
-    "ava": "^1.4.1",
-    "browser-env": "^3.2.6",
-    "nyc": "^14.1.1",
-    "tap-junit": "^3.1.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
-  "xo": {
-    "extends": "xo-vue",
-    "prettier": "true"
-  }
+	"name": "@cat-pun-ui/admin",
+	"version": "0.0.1",
+	"description": "Admin UI for Cat-Pun",
+	"private": true,
+	"repository": "https://github.com/chocpanda/cat-pun",
+	"author": "ChocPanda",
+	"license": "MIT",
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "xo .",
+		"lint:test": "xo .",
+		"lint:fix": "xo --fix .",
+		"lint:report": "xo --format junit . > ./reports/xo/test-results.xml",
+		"test": "nyc ava",
+		"test:unit": "nyc ava",
+		"test:cov": "nyc ava && nyc report",
+		"test:report": "nyc ava --tap | tap-junit --output ./reports/ava --name test-results.xml"
+	},
+	"dependencies": {
+		"buefy": "^0.7.7",
+		"core-js": "^3.1.3",
+		"vue": "^2.6.10",
+		"vue-router": "^3.0.3",
+		"vuex": "^3.0.1"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "^3.8.0",
+		"@vue/cli-service": "^3.8.0",
+		"ava": "^1.4.1",
+		"browser-env": "^3.2.6",
+		"nyc": "^14.1.1",
+		"tap-junit": "^3.1.0",
+		"vue-template-compiler": "^2.6.10"
+	},
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {}
+		}
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions"
+	],
+	"xo": {
+		"extends": "xo-vue",
+		"prettier": "true",
+		"extensions": [
+			"js",
+			"vue"
+		],
+		"rules": {
+			"unicorn/prevent-abbreviations": [
+				"error",
+				{
+					"whitelist": {
+						"props": true,
+						"assetsDir": true
+					}
+				}
+			],
+			"unicorn/filename-case": [
+				"warn",
+				{
+					"cases": {
+						"pascalCase": true,
+						"kebabCase": true
+					}
+				}
+			]
+		}
+	}
 }
