@@ -6,7 +6,7 @@ const mkdirp = require('mkdirp');
 
 const createReportDirectory = root =>
 	fs.readdirSync(root).forEach(projectDirectory => {
-		mkdirp(path.resolve(root, projectDirectory, 'reports', 'eslint'));
+		mkdirp(path.resolve(root, projectDirectory, 'reports', 'xo'));
 		mkdirp(path.resolve(root, projectDirectory, 'reports', 'ava'));
 	});
 

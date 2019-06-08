@@ -9,10 +9,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "eslint .",
-    "lint:test": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "lint:report": "eslint --format junit . > ./reports/eslint/test-results.xml",
+    "lint": "xo .",
+    "lint:test": "xo .",
+    "lint:fix": "xo --fix .",
+    "lint:report": "xo --format junit . > ./reports/xo/test-results.xml",
     "test": "nyc ava",
     "test:unit": "nyc ava",
     "test:cov": "nyc ava && nyc report",
@@ -31,9 +31,6 @@
     "ava": "^1.4.1",
     "browser-env": "^3.2.6",
     "nyc": "^14.1.1",
-    "require-extension-hooks": "^0.3.3",
-    "require-extension-hooks-babel": "^1.0.0-beta.1",
-    "require-extension-hooks-vue": "^3.0.0",
     "tap-junit": "^3.1.0",
     "vue-template-compiler": "^2.6.10"
   },
@@ -46,5 +43,8 @@
     "> 1%",
     "last 2 versions"
   ],
-  "xo": false
+  "xo": {
+    "extends": "xo-vue",
+    "prettier": "true"
+  }
 }

@@ -4,9 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const merger = require('junit-report-merger');
 
-const { argv } = require('yargs').option('reporter', {
+const {argv} = require('yargs').option('reporter', {
 	alias: 'r',
-	describe: 'The reports to aggregate, in this project valid options are [ava, eslint]'
+	describe: 'The reports to aggregate, in this project valid options are [ava, xo]'
 });
 
 const getReportDirectory = root =>
