@@ -55,6 +55,9 @@
 			"vue"
 		],
 		"rules": {
+			"import/no-unassigned-import": ["error", {
+				"allow": ["**/*.css", "**/*.html"]
+			}],
 			"unicorn/prevent-abbreviations": [
 				"error",
 				{
