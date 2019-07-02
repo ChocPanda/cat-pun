@@ -43,7 +43,7 @@ jobs:
                 command: yarn run ci:init
             - run:
                 name: Lint Test
-                command: 'yarn lint:report'
+                command: 'yarn lint:test'
             - store_artifacts:
                 path: ./reports
             - store_test_results:

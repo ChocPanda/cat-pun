@@ -1,3 +1,10 @@
 module.exports = {
-	assetsDir: 'assets'
+	assetsDir: 'assets',
+	css: {
+		loaderOptions: {
+			postcss: {
+				plugins: []
+			}
+		}
+	}
 };
