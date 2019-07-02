@@ -50,28 +50,15 @@
 			"js",
 			"vue"
 		],
+		"ignores": [
+			"reports",
+			"node_modules",
+			".nyc_output"
+		],
 		"rules": {
 			"import/no-unassigned-import": ["error", {
 				"allow": ["**/*.css", "**/*.html"]
-			}],
-			"unicorn/prevent-abbreviations": [
-				"error",
-				{
-					"whitelist": {
-						"props": true,
-						"assetsDir": true
-					}
-				}
-			],
-			"unicorn/filename-case": [
-				"warn",
-				{
-					"cases": {
-						"pascalCase": true,
-						"kebabCase": true
-					}
-				}
-			]
+			}]
 		}
 	}
 }
