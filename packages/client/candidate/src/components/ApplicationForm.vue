@@ -2,31 +2,13 @@
 	<div class="container">
 		<section class="section">
 			<form>
-				<BField v-model="firstName" label="First Name">
-					<BInput placeholder="Alex" />
-				</BField>
-				<BField v-model="lastName" label="Last Name">
-					<BInput placeholder="Smith" />
-				</BField>
-				<BField v-model="email" label="Email">
-					<BInput type="email" placeholder="alex@example.com" icon="envelope" />
-				</BField>
-				<BField v-model="phoneNumber" label="Phone Number">
-					<BInput placeholder="07123456789" icon="phone" />
-				</BField>
-				<BField v-model="postCode" label="Post Code">
-					<BInput icon="mail-bulk" />
-				</BField>
-				<BField v-model="role" label="Role">
-					<BInput placeholder="" />
-				</BField>
-				<BField v-model="currentSalary" label="Current Salary">
-					<BInput placeholder="" />
-				</BField>
-				<BField v-model="expectedSalary" label="Expected Salary">
-					<BInput placeholder="" />
-				</BField>
-				<FileUpload v-model="cv" file-type="cv" />
+				<TextField
+					v-for="(props, key) in fields"
+					:key="key"
+					v-bind="props"
+					v-model="fields[key].value"
+				/>
+				<FileUpload v-model="cv" />
 			</form>
 		</section>
 	</div>
@@ -34,21 +16,64 @@
 
 <script>
 import FileUpload from './FileUpload';
+import TextField from './TextField';
 
 export default {
-	components: { FileUpload },
+	components: { FileUpload, TextField },
 	data: () => ({
-		labelPosition: 'on-border',
-		firstName: '',
-		lastName: '',
-		email: '',
-		postCode: '',
-		phoneNumber: '',
-		role: '',
-		currentSalary: '',
-		expectedSalary: '',
-		cv: {}
-	})
+		fields: {
+			firstName: {
+				value: '',
+				label: 'First Name',
+				placeholder: 'Alex'
+			},
+			lastName: {
+				value: '',
+				label: 'Last Name',
+				placeholder: 'Smith'
+			},
+			email: {
+				value: '',
+				label: 'Email',
+				type: 'email',
+				placeholder: 'alex@example.com',
+				icon: 'envelope'
+			},
+			postCode: {
+				value: '',
+				label: 'Phone Number',
+				placeholder: '07123456789',
+				icon: 'phone'
+			},
+			phoneNumber: {
+				value: '',
+				label: 'Post Code',
+				icon: 'mail-bulk'
+			},
+			role: {
+				value: '',
+				label: 'Role'
+			},
+			currentSalary: {
+				value: '',
+				label: 'Current Salary'
+			},
+			expectedSalary: {
+				value: '',
+				label: 'Expected Salary'
+			},
+			cv: {
+				value: {},
+				fileType: 'cv'
+			}
+		}
+	}),
+	// computed: {
+	// 	fieldsArr: Object.entries(this.fields).reduce((acc, [fieldKey, fieldProps]) => [
+	// 		...arr,
+	// 		{ ...fieldProps, key: fieldKey }
+	// 	], [])
+	// }
 };
 </script>
 

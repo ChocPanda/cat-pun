@@ -11,7 +11,8 @@ import { internalIcons } from './utils/assets';
 import store from './store';
 import App from './App.vue';
 
-library.add(...internalIcons, faEnvelope, faMailBulk, faPhone, faUpload);
+library.add(internalIcons);
+library.add(faEnvelope, faMailBulk, faPhone, faUpload);
 Vue.component('vue-fontawesome', FontAwesomeIcon);
 
 Vue.use(Buefy, {
