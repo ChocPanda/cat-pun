@@ -10,7 +10,7 @@ import { validate } from 'validate.js';
 export default {
 	props: {
 		validatedValue: { type: [Object, Number, String], default: () => {} },
-		validator: { type: Object, default: () => ({ value: { allowEmpty: true } }) },
+		validator: { type: Object, default: () => ({ value: {} }) },
 		type: { type: String, default: () => 'text' },
 		placeholder: { type: String, default: () => '' },
 		icon: { type: String, default: () => '' },
@@ -18,11 +18,11 @@ export default {
 	},
 	computed: {
 		fieldProperties() {
-			const validationErrors = validate(this.value);
+			const errors = this.validatedValue.validationErrors;
 			return {
 				label: this.label,
-				type: validationErrors ? 'is-danger' : '',
-				message: validationErrors
+				type: errors ? 'is-danger' : '',
+				message: errors ? errors.value[0] : ''
 			};
 		},
 		inputProperties() {
@@ -37,7 +37,7 @@ export default {
 		handleInput() {
 			this.$emit('input', {
 				value: this.validatedValue.value,
-				validationErrors: validate(this.validatedValue.value)
+				validationErrors: validate({ value: this.validatedValue.value }, this.validator)
 			});
 		}
 	}
