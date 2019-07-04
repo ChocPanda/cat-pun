@@ -3,12 +3,15 @@
 		<section class="section">
 			<form>
 				<TextField
-					v-for="(props, key) in fields"
+					v-for="(props, key) of fields"
 					:key="key"
 					v-bind="props"
-					v-model="fields[key].value"
-				/>
-				<FileUpload v-model="cv" />
+					v-model="fields[key].validatedValue" />
+				<FileUpload v-model="cv" file-type="CV" />
+				<div class="buttons level-right">
+					<b-button size="is-medium" type="is-primary">Apply...</b-button>
+					<b-button size="is-medium" type="is-warning">Cancel</b-button>
+				</div>
 			</form>
 		</section>
 	</div>
@@ -23,57 +26,51 @@ export default {
 	data: () => ({
 		fields: {
 			firstName: {
-				value: '',
+				validatedValue: {},
 				label: 'First Name',
 				placeholder: 'Alex'
 			},
 			lastName: {
-				value: '',
+				validatedValue: {},
 				label: 'Last Name',
 				placeholder: 'Smith'
 			},
 			email: {
-				value: '',
+				validatedValue: {},
 				label: 'Email',
 				type: 'email',
 				placeholder: 'alex@example.com',
 				icon: 'envelope'
 			},
 			postCode: {
-				value: '',
+				validatedValue: {},
 				label: 'Phone Number',
 				placeholder: '07123456789',
 				icon: 'phone'
 			},
 			phoneNumber: {
-				value: '',
+				validatedValue: {},
 				label: 'Post Code',
 				icon: 'mail-bulk'
 			},
 			role: {
-				value: '',
+				validatedValue: {},
 				label: 'Role'
 			},
 			currentSalary: {
-				value: '',
+				validatedValue: {},
 				label: 'Current Salary'
 			},
 			expectedSalary: {
-				value: '',
+				validatedValue: {},
 				label: 'Expected Salary'
-			},
-			cv: {
-				value: {},
-				fileType: 'cv'
 			}
-		}
+		},
+		cv: {}
 	}),
-	// computed: {
-	// 	fieldsArr: Object.entries(this.fields).reduce((acc, [fieldKey, fieldProps]) => [
-	// 		...arr,
-	// 		{ ...fieldProps, key: fieldKey }
-	// 	], [])
-	// }
+	computed: {
+
+	}
 };
 </script>
 

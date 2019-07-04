@@ -1,6 +1,6 @@
 <template>
-	<BField v-model="value" v-bind="fieldProperties">
-		<BInput @input="handleInput" v-bind="inputProperties" />
+	<BField v-bind="fieldProperties">
+		<BInput @input="handleInput" v-bind="inputProperties" v-model="validatedValue.value" />
 	</BField>
 </template>
 
@@ -9,20 +9,15 @@ import { validate } from 'validate.js';
 
 export default {
 	props: {
-		// value: { type: [Object, Number, String], default: () => '' },
+		validatedValue: { type: [Object, Number, String], default: () => {} },
 		validator: { type: Object, default: () => ({ value: { allowEmpty: true } }) },
 		type: { type: String, default: () => 'text' },
 		placeholder: { type: String, default: () => '' },
 		icon: { type: String, default: () => '' },
 		label: { type: String, default: () => '' }
 	},
-	data: {value: ''},
 	computed: {
-		validatedValue: () => ({
-			value: this.value,
-			validationErrors: validate(this.value)
-		}),
-		fieldProperties: () => {
+		fieldProperties() {
 			const validationErrors = validate(this.value);
 			return {
 				label: this.label,
@@ -30,16 +25,19 @@ export default {
 				message: validationErrors
 			};
 		},
-		inputProperties: () => ({
-			type: this.type,
-			icon: this.icon,
-			placeholder: this.placeholder
-		})
+		inputProperties() {
+			return {
+				type: this.type,
+				icon: this.icon,
+				placeholder: this.placeholder
+			};
+		}
 	},
 	methods: {
-		handleInput: () => {
+		handleInput() {
 			this.$emit('input', {
-				validatedValue: this.validatedValue
+				value: this.validatedValue.value,
+				validationErrors: validate(this.validatedValue.value)
 			});
 		}
 	}
