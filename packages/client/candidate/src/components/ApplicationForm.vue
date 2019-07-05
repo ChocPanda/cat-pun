@@ -2,8 +2,7 @@
 	<div class="container">
 		<section class="section">
 			<form>
-				<TextField v-for="(props, key) of fields" :key="key" v-bind="props"
-v-model="fields[key].validatedValue" />
+				<TextField v-for="(props, key) of fields" :key="key" v-bind="props" v-model="fields[key].validatedValue" />
 				<FileUpload v-model="cv" file-type="CV" />
 				<div class="buttons level-right">
 					<BButton :disabled="!isValid" size="is-medium" type="is-primary">
