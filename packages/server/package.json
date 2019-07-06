@@ -19,6 +19,6 @@
     "xo": "^0.24.0"
   },
   "dependencies": {
-    "mambda": "^1.1.2"
+    "mambda": "^2.0.0"
   }
 }

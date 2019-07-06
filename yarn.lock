@@ -8568,10 +8568,10 @@ make-fetch-happen@^4.0.1:
     socks-proxy-agent "^4.0.0"
     ssri "^6.0.0"
 
-mambda@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/mambda/-/mambda-1.1.2.tgz#7107d917c165915673097f1d6e3859513c97cdcc"
-  integrity sha512-hqgUeM1NnpneW+zn3UDFmCvfU8jJfaFXe7P3WUIatokZYNmrEitoec3uptuvK7gcKk3/IIuA6BtvAQPJiZ5qEQ==
+mambda@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/mambda/-/mambda-2.0.0.tgz#b27d8ef0b1b5e903419c26b23895f8caec1caadf"
+  integrity sha512-aesAR9HlWXD31oVuhTWI/5ztzYbyuzUtnwPmUtvX5Ay2tcIMmpU8wjB/FzmT/FCnf5ATEJtRlE4rY1prcVHAEA==
   dependencies:
     http-errors "^1.7.2"
 
