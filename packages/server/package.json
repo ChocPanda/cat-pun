@@ -1,0 +1,24 @@
+{
+  "name": "@cat-pun-be/api",
+  "version": "0.0.1",
+  "description": "API Backend",
+  "main": "index.js",
+  "repository": "https://github.com/ChocPanda/cat-pun",
+  "author": "ChocPanda",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "xo .",
+    "lint:test": "xo .",
+    "lint:fix": "xo --fix .",
+    "lint:report": "xo --format junit . > ./reports/xo/test-results.xml"
+  },
+  "devDependencies": {
+    "ava": "^2.1.0",
+    "tap-junit": "^3.1.0",
+    "xo": "^0.24.0"
+  },
+  "dependencies": {
+    "mambda": "^1.1.2"
+  }
+}
