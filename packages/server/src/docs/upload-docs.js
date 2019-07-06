@@ -1,5 +1,5 @@
-import S3 from 'aws-sdk/clients/s3';
-import uuid from 'uuid/v4';
+const S3 = require('aws-sdk/clients/s3');
+const uuid = require('uuid/v4');
 
 const generateUrls = ({s3Instance}) => async ({body}) => {
 	const documentsReferenceId = uuid();
@@ -35,13 +35,13 @@ const generateUrls = ({s3Instance}) => async ({body}) => {
 
 /**
  * @swagger
- * /request_upload_urls:
+ * /upload_urls:
  *   options:
  *     responses:
  *       200:
  *         description: 200 CORS response
  *     x-amazon-apigateway-integration:
- *       uri:  ${request_upload_urls_lambda_arn}
+ *       uri:  ${upload_urls_lambda_arn}
  *       passthroughBehavior: when_no_match
  *       httpMethod: POST
  *       contentHandling: CONVERT_TO_TEXT
@@ -64,7 +64,7 @@ const generateUrls = ({s3Instance}) => async ({body}) => {
  *       500:
  *         $ref: "#/responses/Standard500ErrorResponse"
  *     x-amazon-apigateway-integration:
- *       uri: ${request_upload_urls_lambda_arn}
+ *       uri: ${upload_urls_lambda_arn}
  *       passthroughBehavior: when_no_match
  *       httpMethod: POST
  *       contentHandling: CONVERT_TO_TEXT
@@ -78,5 +78,3 @@ exports.post = lambdaGlue({
 	}),
 	handler: generateUrls
 });
-
-export default generateUrls;
