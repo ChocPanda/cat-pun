@@ -1,5 +1,5 @@
 {
-	"name": "@cat-pun-ui/admin",
+	"name": "@cat-pun-fe/admin",
 	"version": "0.0.1",
 	"description": "Admin UI for Cat-Pun",
 	"private": true,

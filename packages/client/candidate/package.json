@@ -1,14 +1,14 @@
 {
-	"name": "@cat-pun-ui/candidate",
+	"name": "@cat-pun-fe/candidate",
 	"version": "0.0.1",
-	"description": "Candidate UI for Cat-Pun",
+	"description": "Candidate fe for Cat-Pun",
 	"private": true,
 	"repository": "https://github.com/chocpanda/cat-pun",
 	"author": "ChocPanda",
 	"license": "MIT",
 	"scripts": {
 		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build",
+		"bfeld": "vue-cli-service bfeld",
 		"lint": "xo .",
 		"lint:test": "xo .",
 		"lint:fix": "xo --fix .",
