@@ -1,21 +1,22 @@
 const S3 = require('aws-sdk/clients/s3');
-const uuid = require('uuid/v4');
+const uuid = require('node-uuid');
+const lambdaWrapper = require('../utils/lambda-wrapper');
 
-const generateUrls = ({s3Instance}) => async ({body}) => {
-	const documentsReferenceId = uuid();
+const generateUrls = ({ s3Instance }) => ({ body }) => {
+	const applicationId = uuid.v4();
 	const urls = body.reduce(
 		(accumulated, fileName) => ({
 			...accumulated,
 			[fileName]: s3Instance.getSignedUrl('putObject', {
 				Bucket: process.env.S3_BUCKET,
-				Key: `${documentsReferenceId}/${fileName}`,
+				Key: `${applicationId}/${fileName}`,
 				Expires: 120
 			})
 		}),
 		{}
 	);
 
-	return {statusCode: 200, body: {documentsRefId: documentsReferenceId, urls}};
+	return { statusCode: 200, body: JSON.stringify({ applicationId, urls }) };
 };
 
 /**
@@ -70,7 +71,7 @@ const generateUrls = ({s3Instance}) => async ({body}) => {
  *       contentHandling: CONVERT_TO_TEXT
  *       type: AWS_PROXY
  */
-exports.post = lambdaGlue({
+exports.post = lambdaWrapper({
 	init: () => ({
 		s3Instance: new S3({
 			signatureVersion: 'v4'
