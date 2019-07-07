@@ -1,1 +1,1 @@
-module.exports = require('../../../nyc.config');
+module.exports = require('../../nyc.config');
