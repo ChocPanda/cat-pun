@@ -19,6 +19,16 @@
     "xo": "^0.24.0"
   },
   "dependencies": {
-    "mambda": "^2.0.0"
+    "aws-sdk": "^2.488.0",
+    "mambda": "^2.1.3",
+    "uuid": "^3.3.2"
+  },
+  "xo": {
+    "prettier": "true",
+    "ignores": [
+      "reports",
+      "node_modules",
+      ".nyc_output"
+    ]
   }
 }
