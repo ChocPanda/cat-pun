@@ -35,7 +35,7 @@
 		"@vue/cli-service": "^3.8.0",
 		"ava": "^2.1.0",
 		"browser-env": "^3.2.6",
-		"eslint-config-xo-vue": "^2.0.0",
+		"eslint-config-xo-vue": "^3.0.1",
 		"eslint-plugin-unicorn": "^9.1.1",
 		"eslint-plugin-vue": "^5.2.3",
 		"nyc": "^14.1.1",
