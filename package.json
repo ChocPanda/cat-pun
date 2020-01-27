@@ -33,7 +33,7 @@
 		"lerna": "^3.14.1",
 		"mkdirp": "^0.5.1",
 		"prettier": "^1.17.1",
-		"semantic-release": "^15.13.3",
+		"semantic-release": "^16.0.4",
 		"yargs": "^13.2.4"
 	},
 	"config": {
