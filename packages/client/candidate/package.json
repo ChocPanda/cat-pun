@@ -28,7 +28,7 @@
 		"vuex": "^3.0.1"
 	},
 	"devDependencies": {
-		"@vue/cli-plugin-babel": "^3.8.0",
+		"@vue/cli-plugin-babel": "^4.2.1",
 		"@vue/cli-service": "^3.8.0",
 		"ava": "^2.1.0",
 		"browser-env": "^3.2.6",
