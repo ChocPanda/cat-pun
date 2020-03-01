@@ -34,7 +34,7 @@
 		"mkdirp": "^0.5.1",
 		"prettier": "^1.17.1",
 		"semantic-release": "^15.13.3",
-		"yargs": "^13.2.4"
+		"yargs": "^15.2.0"
 	},
 	"config": {
 		"commitizen": {
