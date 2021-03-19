@@ -7,14 +7,20 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "ava": "^2.0.0",
+    "ava": "^1.4.1",
     "browser-env": "^3.2.6",
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "xo": "^0.24.0"
+    "xo": "^0.24.0",
+    "snyk": "^1.316.1"
   },
   "xo": {
     "prettier": "true"
-  }
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
