@@ -1,0 +1,47 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "responses": {
+    "200": {
+      "description": "CORS 200 response",
+      "schema": {
+        "description": "empty CORS response",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      },
+      "headers": {
+        "Access-Control-Allow-Origin": {
+          "type": "string"
+        },
+        "Access-Control-Allow-Methods": {
+          "type": "string"
+        },
+        "Access-Control-Allow-Headers": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "x-amazon-apigateway-integration": {
+    "responses": {
+      "default": {
+        "statusCode": "200",
+        "responseParameters": {
+          "method.response.header.Access-Control-Allow-Methods": "'${cors_methods}'",
+          "method.response.header.Access-Control-Allow-Headers": "'Content-Type,Content-Length,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'",
+          "method.response.header.Access-Control-Allow-Origin": "'${front_end_url}'"
+        }
+      }
+    },
+    "requestTemplates": {
+      "application/json": "{\"statusCode\": 200}"
+    },
+    "passthroughBehavior": "when_no_match",
+    "type": "mock"
+  }
+}
